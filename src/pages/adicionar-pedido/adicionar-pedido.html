@@ -19,11 +19,19 @@
             <ion-option value="vendaNaoIdentificada">Venda não Identificada</ion-option>
           </ion-select>
         </ion-item>
-        <ion-searchbar placeholder="Pesquisar Cliente">
+        <ion-searchbar placeholder="Pesquisar Cliente" [(ngModel)]="termo" (ionChange)="exibeFiltrados()">
         </ion-searchbar>
-        <p><span padding-right text-capitalize>CPF/CNPJ:</span></p>
-        <p><span padding-right text-capitalize>Código:</span></p>
-        <p><span padding-right text-capitalize>Descrição:</span></p>
+
+        <ion-list inset *ngIf="clientes">
+            <button *ngFor="let cliente of clientes" ion-item text-wrap (click)="selecionaCliente(cliente)">
+              <p>Endereço: {{ cliente.end_rua }}, {{ cliente.end_numero }} - Cidade: {{ cliente.end_cidade }}</p>
+              <span>Código Cliente: {{ cliente.codigoCliente }} / Nome: {{ cliente.nome }} / CNPJ/CPF: {{ cliente.cnpj }}</span>
+            </button>
+          </ion-list>
+
+        <p><span padding-right text-capitalize>CPF/CNPJ: {{cliente?.cnpj}}</span></p>
+        <p><span padding-right text-capitalize>Código: {{cliente?.codigoCliente}}</span></p>
+        <p><span padding-right text-capitalize>Nome: {{cliente?.nome}}</span></p>
         <p><span padding-right text-capitalize>Status:</span>Não Registrado</p>
         <p><span padding-right text-capitalize>Data Venda:</span>28/01/2019</p>
       </ion-col>
@@ -67,7 +75,8 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-searchbar placeholder="Buscar Material"> </ion-searchbar>
+      <button ion-button icon-end [navPush]="'ProdutosPage'">Adicionar produtos</button>
+      <!-- <ion-searchbar placeholder="Buscar Material"> </ion-searchbar> -->
     </ion-row>
   </ion-grid>
   <ion-grid text-center>
@@ -88,19 +97,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>10002</td>
-              <td>Arame Farpado Motto - 250m</td>
-              <td>130,00</td>
+            <tr *ngFor="let produto of produtos">
+              <td>{{produto.Codigo}}</td>
+              <td>{{produto.Descricao}}</td>
+              <td>{{produto.Preco}}</td>
               <td>1</td>
-              <td>Metros</td>
+              <td>{{produto.UnidadeMedida}}</td>
               <td></td>
               <td>
-                <ion-select> <ion-option></ion-option> </ion-select>
+                <!-- <ion-select> <ion-option></ion-option> </ion-select> -->
               </td>
               <td>130,00</td>
-              <td>
-                <ion-icon name="close-circle"></ion-icon>
+              <td (click)="removeProduto(produto)">
+                <ion-icon name="close-circle" ></ion-icon>
               </td>
             </tr>
           </tbody>

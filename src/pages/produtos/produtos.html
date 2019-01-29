@@ -96,7 +96,7 @@
               <td [navPush]="'DetalheProdutoPage'">{{produto.Loja}}</td>
               <td [navPush]="'DetalheProdutoPage'">{{produto.UnidadeMedida}}</td>
               <td [navPush]="'DetalheProdutoPage'">{{produto.GrupoMerc}}</td>
-              <td [navPush]="'AdicionarPedidoPage'">
+              <td (click)="adicionaAoPedido(produto)">
                 <ion-icon name="cart"></ion-icon>
               </td>
             </tr>

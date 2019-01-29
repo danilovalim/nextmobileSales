@@ -1,11 +1,16 @@
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ClienteProvider {
   private PATH = 'clientes/';
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private http: HttpClient, private db: AngularFireDatabase) { }
+
+  pegaClientes(){
+    return this.http.get('../../assets/data/clientes.json')
+  }
 
   getAll(){
     return this.db.list(this.PATH, ref => ref.orderByChild('nome'))

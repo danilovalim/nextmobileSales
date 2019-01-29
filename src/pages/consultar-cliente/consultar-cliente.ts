@@ -5,6 +5,7 @@ import { IonicPage, NavController,ToastController } from 'ionic-angular';
 import { map } from 'rxjs/operators';
 import { AngularFireDatabase } from "angularfire2/database";
 import { Cliente } from './../../app/model';
+import { ThrowStmt } from '@angular/compiler';
 
 @IonicPage()
 @Component({
@@ -16,6 +17,9 @@ export class ConsultarClientePage {
   cliente: Observable<any>;
 
   dbClientes: Observable<any>;
+
+  fakeClientes: any;
+  termo:string = '';
 
   constructor(
     private provider: ClienteProvider,
@@ -41,13 +45,21 @@ export class ConsultarClientePage {
   ];
 
   ionViewWillEnter() {
-    this.dbClientes = this.getAllClientes();
-    console.log('Em dbClientes: ', this.dbClientes);
-    console.log( JSON.stringify(this.dbClientes) );
+    // this.dbClientes = this.getAllClientes();
+    // console.log('Em dbClientes: ', this.dbClientes);
+    // console.log( JSON.stringify(this.dbClientes) );
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ConsultarClientePage');
+    this.pegaClientes();
+  }
+
+  pegaClientes(){
+    this.provider.pegaClientes()
+      .subscribe((data)=>{
+        console.log(data)
+        this.fakeClientes = data;
+      })
   }
 
   // Função para buscar os clientes
@@ -60,6 +72,21 @@ export class ConsultarClientePage {
           return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
         })
       );
+  }
+
+  exibeFiltrados(){
+    this.fakeClientes = this.filtrar();
+  }
+
+  filtrar() {
+    if(this.termo.length > 0){
+      return this.fakeClientes.filter((item) => {
+        return item.nome.toLowerCase().indexOf(this.termo.toLowerCase()) > -1;
+      });
+    }
+    else{
+      this.pegaClientes();
+    }
   }
 
 }

@@ -8,8 +8,7 @@
   </ion-header>
 
   <ion-content padding>
-    <ion-searchbar placeholder="Pesquisar por Cód, Nome ou CPF/CNPJ">
-      </ion-searchbar>
+    <ion-searchbar placeholder="Pesquisar por Cód, Nome ou CPF/CNPJ" [(ngModel)]="termo" (ionChange)="exibeFiltrados()"></ion-searchbar>
     <!-- Lista de clientes estática -->
     <!-- <ion-list *ngIf="dbClientes">
         <ion-item *ngFor="let cliente of dbClientes">
@@ -20,9 +19,9 @@
       </ion-list> -->
 
     <ion-list inset>
-      <button ion-item text-wrap [navPush]="'DetalheClientePage'">
-        <p>Endereço: V HENRY FORD, 1123 - Cidade: SÃO PAULO</p>
-        <span>Código Cliente: 123765 / Nome: AÇO XYZ LTDA / CNPJ/CPF: 12343317900804</span>
+      <button *ngFor="let cliente of fakeClientes" ion-item text-wrap [navPush]="'DetalheClientePage'">
+        <p>Endereço: {{ cliente.end_rua }}, {{ cliente.end_numero }} - Cidade: {{ cliente.end_cidade }}</p>
+        <span>Código Cliente: {{ cliente.codigoCliente }} / Nome: {{ cliente.nome }} / CNPJ/CPF: {{ cliente.cnpj }}</span>
       </button>
     </ion-list>
 

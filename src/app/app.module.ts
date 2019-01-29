@@ -19,6 +19,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProdutosProvider } from '../providers/produtos/produtos';
 import { HttpClientModule } from '@angular/common/http';
+import { GlobalProvider } from '../providers/global/global';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuth,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ClienteProvider,
-    ProdutosProvider
+    ProdutosProvider,
+    GlobalProvider
   ]
 })
 export class AppModule {}

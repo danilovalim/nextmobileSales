@@ -1,0 +1,46 @@
+[
+    {
+        "nome": "Cliente 1",
+        "codigoCliente": "101",
+        "end_rua": "R DAS PEDRAS",
+        "end_numero": "23",
+        "end_bairro": "",
+        "end_cidade": "IPATINGA",
+        "end_complemento": "",
+        "end_uf": "SP",
+        "cnpj":"53.122.948/0001-86"
+      },
+      {
+        "nome": "Cliente 2",
+        "codigoCliente": "102",
+        "end_rua": "R DAS PEDRAS",
+        "end_numero": "23",
+        "end_bairro": "",
+        "end_cidade": "IPATINGA",
+        "end_complemento": "",
+        "end_uf": "SP",
+        "cnpj":"04.914.321/0001-52"
+      },
+      {
+        "nome": "Cliente 3",
+        "codigoCliente": "103",
+        "end_rua": "R DAS PEDRAS",
+        "end_numero": "23",
+        "end_bairro": "",
+        "end_cidade": "IPATINGA",
+        "end_complemento": "",
+        "end_uf": "SP",
+        "cnpj":"25.961.113/0001-84"
+      },
+      {
+        "nome": "Cliente 4",
+        "codigoCliente": "104",
+        "end_rua": "R DAS PEDRAS",
+        "end_numero": "23",
+        "end_bairro": "",
+        "end_cidade": "IPATINGA",
+        "end_complemento": "",
+        "end_uf": "SP",
+        "cnpj":"26.220.173/0001-09"
+      }
+]
