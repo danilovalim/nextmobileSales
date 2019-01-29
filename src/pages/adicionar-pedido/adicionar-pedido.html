@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Carrinho Venda</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h4>1. Carrinho</h4>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6>
+        <ion-item>
+          <ion-label>Tipo Operação:</ion-label>
+          <ion-select>
+            <ion-option value="cotacao">Cotação</ion-option>
+            <ion-option value="ordemVenda">Ordem de Venda</ion-option>
+            <ion-option value="vendaTriangular">Venda Triagular</ion-option>
+            <ion-option value="vendaNaoIdentificada">Venda não Identificada</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-searchbar placeholder="Pesquisar Cliente">
+        </ion-searchbar>
+        <p><span padding-right text-capitalize>CPF/CNPJ:</span></p>
+        <p><span padding-right text-capitalize>Código:</span></p>
+        <p><span padding-right text-capitalize>Descrição:</span></p>
+        <p><span padding-right text-capitalize>Status:</span>Não Registrado</p>
+        <p><span padding-right text-capitalize>Data Venda:</span>28/01/2019</p>
+      </ion-col>
+      <ion-col col-12 col-md-6>
+        <ion-item>
+          <ion-label>Entrega:</ion-label>
+          <ion-select>
+              <ion-option></ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Canal:</ion-label>
+          <ion-select>
+              <ion-option value="10">10 Coligadas</ion-option>
+              <ion-option value="20">20 Indústrias</ion-option>
+              <ion-option value="30">30 Distribuidores</ion-option>
+              <ion-option value="40">40 Consumidos</ion-option>
+              </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Setor:</ion-label>
+          <ion-select>
+            <ion-option>00 Planos</ion-option>
+            <ion-option>10 Construção Civil</ion-option>
+            <ion-option>50 Produtos Industriais</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Equipe de Vendas:</ion-label>
+            <ion-select>
+              <ion-option></ion-option>
+            </ion-select>
+          </ion-item>
+        <ion-item>
+          <ion-label>Pagamento:</ion-label>
+          <ion-select>
+            <ion-option value="cartaoCredito">Cartão de Crédito</ion-option>
+            <ion-option value="cartaoDebito">Cartão de Debito</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-searchbar placeholder="Buscar Material"> </ion-searchbar>
+    </ion-row>
+  </ion-grid>
+  <ion-grid text-center>
+    <ion-scroll scrollX style="min-height: 200px">
+      <ion-row>
+        <table datatable col-12>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Produto</th>
+              <th>Preço</th>
+              <th>Qtde.</th>
+              <th>Unid.</th>
+              <th>Centro</th>
+              <th>Tipo Frete</th>
+              <th>Sub. Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10002</td>
+              <td>Arame Farpado Motto - 250m</td>
+              <td>130,00</td>
+              <td>1</td>
+              <td>Metros</td>
+              <td></td>
+              <td>
+                <ion-select> <ion-option></ion-option> </ion-select>
+              </td>
+              <td>130,00</td>
+              <td>
+                <ion-icon name="close-circle"></ion-icon>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><h6 class="mt-2">Total</h6></td>
+                <td><h6 class="mt-2" id="total">130,00</h6></td>
+              </tr>
+            </tfoot>
+        </table>
+      </ion-row>
+    </ion-scroll>
+  </ion-grid>
+
+  <button ion-button icon-end [navPush]="'ReverPedidoPage'">
+      Etapa 2
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+</ion-content>

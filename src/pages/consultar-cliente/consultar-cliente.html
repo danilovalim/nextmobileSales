@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Consulta de Clientes</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-searchbar placeholder="Pesquisar por Cód, Nome ou CPF/CNPJ">
+      </ion-searchbar>
+    <!-- Lista de clientes estática -->
+    <!-- <ion-list *ngIf="dbClientes">
+        <ion-item *ngFor="let cliente of dbClientes">
+          <button ion-item text-wrap [navPush]="'DetalheClientePage'">
+            <p> {{ cliente.nome}}</p>
+          </button>
+        </ion-item>
+      </ion-list> -->
+
+    <ion-list inset>
+      <button ion-item text-wrap [navPush]="'DetalheClientePage'">
+        <p>Endereço: V HENRY FORD, 1123 - Cidade: SÃO PAULO</p>
+        <span>Código Cliente: 123765 / Nome: AÇO XYZ LTDA / CNPJ/CPF: 12343317900804</span>
+      </button>
+    </ion-list>
+
+  </ion-content>

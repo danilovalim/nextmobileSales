@@ -1,0 +1,38 @@
+[
+    {
+        "Codigo":"10002",
+        "Descricao":"Arame Farpado Motto - 250m",
+        "Preco":"130,00",
+        "Estoque":"10",
+        "Loja":"9607",
+        "UnidadeMedida":"Metros",
+        "GrupoMerc":"XPTO Produtos"
+    },
+    {
+        "Codigo":"10005",
+        "Descricao":"Areia",
+        "Preco":"30,00",
+        "Estoque":"10",
+        "Loja":"9607",
+        "UnidadeMedida":"Metros",
+        "GrupoMerc":"XPTO Produtos"
+    },
+    {
+        "Codigo":"10007",
+        "Descricao":"Pedra",
+        "Preco":"50,00",
+        "Estoque":"10",
+        "Loja":"9607",
+        "UnidadeMedida":"Metros",
+        "GrupoMerc":"XPTO Produtos"
+    },
+    {
+        "Codigo":"100012",
+        "Descricao":"Cimento",
+        "Preco":"25,00",
+        "Estoque":"10",
+        "Loja":"9607",
+        "UnidadeMedida":"Metros",
+        "GrupoMerc":"XPTO Produtos"
+    }
+]
